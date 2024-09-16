@@ -33,15 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const programSection = document.getElementById('program-list');
         programSection.innerHTML = ''; // Clear existing content
         programs.forEach(program => {
-            let programHTML = `<li><a href="#" data-program="${program.name.toLowerCase().replace(/\s+/g, '-')}" onclick="loadProgramDetails('${program.name.toLowerCase().replace(/\s+/g, '-')}')">${program.name}</a></li>`;
+            let programHTML = `<li><a href="${program.name.toLowerCase().replace(/\s+/g, '-')}.html">${program.name}</a></li>`;
             programSection.innerHTML += programHTML;
         });
     }
-
-    // Load program details dynamically
-    window.loadProgramDetails = function(program) {
-        window.location.href = `${program}.html`; // Redirect to the program's detail page
-    };
 
     // Search functionality
     window.performSearch = function() {
