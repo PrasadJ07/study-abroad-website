@@ -11,60 +11,34 @@
         <h1>Explore Study Abroad Programs</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="home-tab">Home</a></li>
+                <li><a href="#" id="programs-tab">Programs</a></li>
+                <li><a href="#" id="contact-tab">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <section id="home">
+    <section id="home" class="content">
         <h2>Welcome to Your Study Abroad Journey!</h2>
         <p>Discover universities, programs, and scholarships that fit your academic goals.</p>
+        <div id="search-box" class="hidden">
+            <input type="text" id="search-input" placeholder="Search colleges, exams, countries...">
+            <button onclick="performSearch()">Search</button>
+        </div>
     </section>
 
-    <!-- One section for all the programs -->
-    <section id="programs">
+    <section id="programs" class="content hidden">
         <h2>Featured Programs</h2>
-
-        <div class="program">
-            <h3>USA - Data Analytics</h3>
-            <p>Duration: 2 years</p>
-            <p>University: Yeshiva University</p>
-        </div>
-
-        <div class="program">
-            <h3>UK - Computer Science</h3>
-            <p>Duration: 1 year</p>
-            <p>University: University of Oxford</p>
-        </div>
-
-        <h2>Additional Programs</h2>
-        <ul>
-            <li>
-                <h3>Computer Science</h3>
-                <p>Available at: University A, University B</p>
-            </li>
-            <li>
-                <h3>Data Analytics</h3>
-                <p>Available at: University C, University D</p>
-            </li>
-            <li>
-                <h3>Business Administration</h3>
-                <p>Available at: University E, University F</p>
-            </li>
-            <li>
-                <h3>Artificial Intelligence</h3>
-                <p>Available at: University G, University H</p>
-            </li>
+        <ul id="program-list">
+            <!-- Programs will be dynamically inserted here -->
         </ul>
     </section>
 
-    <footer id="contact">
+    <section id="contact" class="content hidden">
         <h2>Contact Us</h2>
         <p>Email: info@studyabroad.com</p>
         <p>Phone: +123 456 7890</p>
-    </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
