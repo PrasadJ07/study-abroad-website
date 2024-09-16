@@ -1,3 +1,57 @@
+
+.hidden {
+    display: none;
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #f15a29;
+}
+
 /* Dropdown Styling */
 .dropdown {
   position: relative;
@@ -31,3 +85,31 @@
 .dropdown:hover .dropbtn {
   background-color: #555;
 }
+
+/* Hero Section */
+.hero {
+  background-color: #f4f4f4;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: inline-flex;
+  width: 60%;
+  max-width: 600px;
+}
+
+.search-form input[type="text"] {
+  width: 80%;
+  padding: 10px;
+ 
