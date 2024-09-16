@@ -16,6 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 section.classList.add('hidden');
             }
         });
+
+        // Show the search box if the home section is visible
+        if (sectionId === 'home') {
+            document.getElementById('search-box').classList.remove('hidden');
+        } else {
+            document.getElementById('search-box').classList.add('hidden');
+        }
     }
 
     // Display program list and details
@@ -35,4 +42,13 @@ function displayPrograms() {
         let programHTML = `<li><a href="${program.name.toLowerCase().replace(/\s+/g, '-')}.html">${program.name}</a></li>`;
         programSection.innerHTML += programHTML;
     });
+}
+
+function performSearch() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const results = programs.flatMap(program =>
+        program.universities.filter(university => university.toLowerCase().includes(query))
+    );
+    
+    alert(results.length > 0 ? `Search Results:\n${results.join('\n')}` : 'No results found.');
 }
