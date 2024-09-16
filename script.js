@@ -61,11 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Search functionality
     window.performSearch = function() {
         const query = document.getElementById('search-input').value.toLowerCase();
-        const results = programs.flatMap(program =>
-            program.universities.filter(university => university.toLowerCase().includes(query))
-        );
+        let results = [];
+        
+        // Search for universities matching the query
+        programs.forEach(program => {
+            const matches = program.universities.filter(university => university.toLowerCase().includes(query));
+            if (matches.length > 0) {
+                results.push({ program: program.name, universities: matches });
+            }
+        });
 
-        alert(results.length > 0 ? `Search Results:\n${results.join('\n')}` : 'No results found.');
+        // Display search results
+        if (results.length > 0) {
+            let resultsHTML = results.map(result => 
+                `<h3>${result.program}</h3><ul>${result.universities.map(university => `<li>${university}</li>`).join('')}</ul>`
+            ).join('');
+            document.getElementById('search-results').innerHTML = resultsHTML;
+        } else {
+            document.getElementById('search-results').innerHTML = 'No results found.';
+        }
     }
 });
 
