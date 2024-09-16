@@ -15,6 +15,7 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -29,14 +30,25 @@ nav ul li a {
 
 section {
     padding: 20px;
+    background-color: white;
+    margin: 10px 0; /* Add spacing between sections */
+    border-radius: 8px; /* Match program box style */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Match program box style */
 }
 
-.program {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none;
 }
 
 footer {
