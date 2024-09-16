@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Abroad Programs</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Abroad Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Explore Study Abroad Programs</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="home-tab">Home</a></li>
-                <li><a href="#" id="programs-tab">Programs</a></li>
-                <li><a href="#" id="contact-tab">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home" class="content">
-        <h2>Welcome to Your Study Abroad Journey!</h2>
-        <p>Discover universities, programs, and scholarships that fit your academic goals.</p>
-        <div id="search-box">
-            <input type="text" id="search-input" placeholder="Search colleges, exams, countries...">
-            <button onclick="performSearch()">Search</button>
-        </div>
-        <div id="search-results"></div>
-    </section>
+  <!-- Top Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">StudyAbroad</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#universities">Universities</a></li>
+        <li><a href="#countries">Countries</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="programs" class="content hidden">
-        <h2>Featured Programs</h2>
-        <ul id="program-list">
-            <!-- Programs will be dynamically inserted here -->
-        </ul>
-    </section>
+  <!-- Hero Section with Search Bar -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find the Best Study Abroad Programs</h1>
+      <p>Your dream education is just a click away!</p>
+      <form class="search-form">
+        <input type="text" placeholder="Search for programs, universities, countries">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
 
-    <section id="contact" class="content hidden">
-        <h2>Contact Us</h2>
-        <p>Email: info@studyabroad.com</p>
-        <p>Phone: +123 456 7890</p>
-    </section>
+  <!-- Featured Programs -->
+  <section id="programs" class="featured-section">
+    <h2>Explore Popular Programs</h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <img src="program1.jpg" alt="Program 1">
+        <h3>Computer Science</h3>
+        <p>Top universities offering Computer Science.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="program-card">
+        <img src="program2.jpg" alt="Program 2">
+        <h3>Business Management</h3>
+        <p>Explore the best business schools.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <!-- Add more program cards -->
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Featured Universities -->
+  <section id="universities" class="featured-section">
+    <h2>Top Universities</h2>
+    <div class="universities-grid">
+      <div class="university-card">
+        <img src="uni1.jpg" alt="University 1">
+        <h3>Harvard University</h3>
+        <p>Ranked #1 globally for Business Studies.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="university-card">
+        <img src="uni2.jpg" alt="University 2">
+        <h3>Stanford University</h3>
+        <p>Excellence in Computer Science and Technology.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <!-- Add more university cards -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>Study Abroad</h3>
+      <p>Your one-stop platform for exploring study-abroad options.</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Study Abroad. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
