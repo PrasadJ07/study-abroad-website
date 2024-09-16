@@ -8,18 +8,28 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">StudyAbroad</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#universities">Universities</a></li>
-        <li><a href="#countries">Countries</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header>
+  <nav class="navbar">
+    <div class="logo">StudyAbroad</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      
+      <!-- Programs button with dropdown -->
+      <li class="dropdown">
+        <a href="#programs" class="dropbtn">Programs</a>
+        <div class="dropdown-content">
+          <a href="#program1">Computer Science</a>
+          <a href="#program2">Business Management</a>
+          <!-- Add more programs here -->
+        </div>
+      </li>
+
+      <li><a href="#universities">Universities</a></li>
+      <li><a href="#countries">Countries</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero Section with Search Bar -->
   <section class="hero">
@@ -33,25 +43,32 @@
     </div>
   </section>
 
-  <!-- Featured Programs -->
-  <section id="programs" class="featured-section">
-    <h2>Explore Popular Programs</h2>
-    <div class="programs-grid">
-      <div class="program-card">
-        <img src="program1.jpg" alt="Program 1">
-        <h3>Computer Science</h3>
-        <p>Top universities offering Computer Science.</p>
-        <a href="#">Learn More</a>
-      </div>
-      <div class="program-card">
-        <img src="program2.jpg" alt="Program 2">
-        <h3>Business Management</h3>
-        <p>Explore the best business schools.</p>
-        <a href="#">Learn More</a>
-      </div>
-      <!-- Add more program cards -->
+ <!-- Featured Programs -->
+<section id="programs" class="featured-section">
+  <h2>Explore Popular Programs</h2>
+  <div class="programs-grid">
+
+    <!-- Program 1: Computer Science -->
+    <div id="program1" class="program-card">
+      <img src="program1.jpg" alt="Program 1">
+      <h3>Computer Science</h3>
+      <p>Top universities offering Computer Science.</p>
+      <a href="#">Learn More</a>
     </div>
-  </section>
+
+    <!-- Program 2: Business Management -->
+    <div id="program2" class="program-card">
+      <img src="program2.jpg" alt="Program 2">
+      <h3>Business Management</h3>
+      <p>Explore the best business schools.</p>
+      <a href="#">Learn More</a>
+    </div>
+    
+    <!-- Add more program cards if needed -->
+    
+  </div>
+</section>
+
 
   <!-- Featured Universities -->
   <section id="universities" class="featured-section">
