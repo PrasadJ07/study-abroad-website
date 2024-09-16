@@ -36,27 +36,16 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Match program box style */
 }
 
-ul {
+/* Additional styles for programs section */
+#programs ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul li {
+#programs ul li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
-}
-
-ul li:last-child {
-    border-bottom: none;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+    background-color: #e8f4f8; /* Light blue background for list items */
+    border-radius: 4px; /* Rounded corners for list items */
+    margin-bottom: 10px; /* Spa
