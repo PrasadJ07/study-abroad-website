@@ -6,15 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('programs-tab').addEventListener('click', () => showSection('programs'));
     document.getElementById('contact-tab').addEventListener('click', () => showSection('contact'));
 
-    // Event listener for program links
-    document.querySelectorAll('#program-list a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const program = e.target.getAttribute('data-program');
-            loadProgramDetails(program);
-        });
-    });
-
     // Display programs on page load
     displayPrograms();
 
@@ -37,36 +28,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Load program details dynamically
-    function loadProgramDetails(program) {
-        fetch(`${program}.html`)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content-container').innerHTML = data;
-                showSection('content-container'); // Show the content container
-            })
-            .catch(error => console.error('Error loading program details:', error));
-    }
-
     // Display program list
     function displayPrograms() {
         const programSection = document.getElementById('program-list');
         programSection.innerHTML = ''; // Clear existing content
         programs.forEach(program => {
-            let programHTML = `<li><a href="#" data-program="${program.name.toLowerCase().replace(/\s+/g, '-')}" >${program.name}</a></li>`;
+            let programHTML = `<li><a href="#" data-program="${program.name.toLowerCase().replace(/\s+/g, '-')}" onclick="loadProgramDetails('${program.name.toLowerCase().replace(/\s+/g, '-')}')">${program.name}</a></li>`;
             programSection.innerHTML += programHTML;
         });
     }
 
+    // Load program details dynamically
+    window.loadProgramDetails = function(program) {
+        window.location.href = `${program}.html`; // Redirect to the program's detail page
+    };
+
     // Search functionality
     window.performSearch = function() {
         const query = document.getElementById('search-input').value.toLowerCase();
-        const results = programs.flatMap(program =>
-            program.universities.filter(university => university.toLowerCase().includes(query))
-        );
+        let results = [];
+        
+        // Search for universities matching the query
+        programs.forEach(program => {
+            const matches = program.universities.filter(university => university.toLowerCase().includes(query));
+            if (matches.length > 0) {
+                results.push({ program: program.name, universities: matches });
+            }
+        });
 
-        alert(results.length > 0 ? `Search Results:\n${results.join('\n')}` : 'No results found.');
-    }
+        // Display search results
+        if (results.length > 0) {
+            let resultsHTML = results.map(result => 
+                `<h3>${result.program}</h3><ul>${result.universities.map(university => `<li><a href="${university.toLowerCase().replace(/\s+/g, '-')}.html">${university}</a></li>`).join('')}</ul>`
+            ).join('');
+            document.getElementById('search-results').innerHTML = resultsHTML;
+        } else {
+            document.getElementById('search-results').innerHTML = 'No results found.';
+        }
+    };
 });
 
 const programs = [
