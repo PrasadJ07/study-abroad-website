@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('programs-tab').addEventListener('click', () => showSection('programs'));
     document.getElementById('contact-tab').addEventListener('click', () => showSection('contact'));
 
+    // Handle dynamic program detail page loading
+    document.querySelectorAll('#program-list a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const program = e.target.getAttribute('data-program');
+            loadProgramDetails(program);
+        });
+    });
+
     // Function to show the selected section and hide others
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.content');
@@ -25,6 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Load program details dynamically
+    function loadProgramDetails(program) {
+        fetch(`${program}.html`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content-container').innerHTML = data;
+                showSection('content-container'); // Show the content container
+            })
+            .catch(error => console.error('Error loading program details:', error));
+    }
+
     // Display program list
     displayPrograms();
 });
@@ -39,7 +59,7 @@ const programs = [
 function displayPrograms() {
     const programSection = document.getElementById('program-list');
     programs.forEach(program => {
-        let programHTML = `<li><a href="${program.name.toLowerCase().replace(/\s+/g, '-')}.html">${program.name}</a></li>`;
+        let programHTML = `<li><a href="#" data-program="${program.name.toLowerCase().replace(/\s+/g, '-')}" >${program.name}</a></li>`;
         programSection.innerHTML += programHTML;
     });
 }
