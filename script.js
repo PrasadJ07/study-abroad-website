@@ -9,7 +9,6 @@ const programs = [
   { name: "Artificial Intelligence", universities: ["University G", "University H"] }
 ];
 
-// Function to display the programs
 function displayPrograms() {
   const programSection = document.getElementById('programs');
   programs.forEach(program => {
@@ -17,3 +16,6 @@ function displayPrograms() {
     programSection.innerHTML += programHTML;
   });
 }
+
+// Call the function after the page loads
+window.onload = displayPrograms;
