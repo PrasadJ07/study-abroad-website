@@ -1,85 +1,66 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    // Define tabs
+    const homeTab = document.getElementById('home-tab');
+    const programsTab = document.getElementById('programs-tab');
+    const contactTab = document.getElementById('contact-tab');
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
+    // Define sections
+    const homeSection = document.getElementById('home');
+    const programsSection = document.getElementById('programs');
+    const contactSection = document.getElementById('contact');
+    const searchBox = document.getElementById('search-box');
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    // Define program list
+    const programList = document.getElementById('program-list');
+    const programs = [
+        { name: "Computer Science", universities: ["University A", "University B"] },
+        { name: "Data Analytics", universities: ["University C", "University D"] },
+        { name: "Business Administration", universities: ["University E", "University F"] },
+        { name: "Artificial Intelligence", universities: ["University G", "University H"] }
+    ];
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+    function displayPrograms() {
+        programList.innerHTML = ''; // Clear existing programs
+        programs.forEach(program => {
+            const programHTML = `<li><h3>${program.name}</h3><p>Available at: ${program.universities.join(', ')}</p></li>`;
+            programList.innerHTML += programHTML;
+        });
+    }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+    function performSearch() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        // Implement your search logic here
+        alert(`Searching for: ${query}`);
+    }
 
-section {
-    padding: 20px;
-    background-color: white;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    function showSection(sectionToShow) {
+        homeSection.classList.add('hidden');
+        programsSection.classList.add('hidden');
+        contactSection.classList.add('hidden');
+        searchBox.classList.add('hidden');
 
-.hidden {
-    display: none;
-}
+        sectionToShow.classList.remove('hidden');
+        if (sectionToShow === homeSection) {
+            searchBox.classList.remove('hidden');
+        }
+    }
 
-#search-box {
-    margin-top: 20px;
-}
+    homeTab.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(homeSection);
+    });
 
-#search-input {
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
+    programsTab.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(programsSection);
+        displayPrograms();
+    });
 
-#search-box button {
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
+    contactTab.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(contactSection);
+    });
 
-#search-box button:hover {
-    background-color: #0056b3;
-}
-
-#program-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-#program-list li:last-child {
-    border-bottom: none;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+    // Initially show the home section
+    showSection(homeSection);
+});
