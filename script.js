@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Display program list and details
+    // Display program list
     displayPrograms();
 });
 
