@@ -13,16 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Define program list
     const programList = document.getElementById('program-list');
     const programs = [
-        { name: "Data Science", universities: ["University of California, Berkeley", "University of Washington"] },
-        { name: "Machine Learning", universities: ["Stanford University", "University of Illinois"] },
-        { name: "Cybersecurity", universities: ["Carnegie Mellon University", "MIT"] },
-        { name: "Software Engineering", universities: ["Harvard University", "University of Michigan"] }
+        { name: "Computer Science", universities: ["University A", "University B"] },
+        { name: "Data Analytics", universities: ["University C", "University D"] },
+        { name: "Business Administration", universities: ["University E", "University F"] },
+        { name: "Artificial Intelligence", universities: ["University G", "University H"] }
     ];
 
     function displayPrograms() {
         programList.innerHTML = ''; // Clear existing programs
         programs.forEach(program => {
-            const programHTML = `<li><h3>${program.name}</h3><p>Available at: ${program.universities.join(', ')}</p></li>`;
+            const programHTML = `<li><h3>${program.name}</h3></li>`;
             programList.innerHTML += programHTML;
         });
     }
