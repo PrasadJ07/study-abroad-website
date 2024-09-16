@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Website loaded successfully!");
-    // You can add more dynamic features here
 });
+
+// Programs data
 const programs = [
   { name: "Computer Science", universities: ["University A", "University B"] },
   { name: "Data Analytics", universities: ["University C", "University D"] },
@@ -9,11 +10,17 @@ const programs = [
   { name: "Artificial Intelligence", universities: ["University G", "University H"] }
 ];
 
+// Function to display programs dynamically
 function displayPrograms() {
-  const programSection = document.getElementById('programs');
+  const programList = document.querySelector("#programs ul"); // Select the existing <ul> inside #programs
+  
   programs.forEach(program => {
-    let programHTML = `<li><h3>${program.name}</h3><p>Available at: ${program.universities.join(', ')}</p></li>`;
-    programSection.innerHTML += programHTML;
+    let programHTML = `
+      <li>
+        <h3>${program.name}</h3>
+        <p>Available at: ${program.universities.join(', ')}</p>
+      </li>`;
+    programList.innerHTML += programHTML;  // Add the new program to the list
   });
 }
 
