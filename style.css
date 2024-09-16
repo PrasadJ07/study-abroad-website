@@ -36,7 +36,19 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Match program box style */
 }
 
-/* Additional styles for programs section */
+/* Specific styles for the #programs section */
+#programs {
+    background-color: #f9f9f9; /* Light gray background for the whole section */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#programs h2 {
+    margin-top: 0;
+    color: #333;
+}
+
 #programs ul {
     list-style: none;
     padding: 0;
