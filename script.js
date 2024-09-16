@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Define program list
     const programList = document.getElementById('program-list');
     const programs = [
-        { name: "Computer Science", universities: ["University A", "University B"] },
-        { name: "Data Analytics", universities: ["University C", "University D"] },
-        { name: "Business Administration", universities: ["University E", "University F"] },
-        { name: "Artificial Intelligence", universities: ["University G", "University H"] }
+        { name: "Data Science", universities: ["University of California, Berkeley", "University of Washington"] },
+        { name: "Machine Learning", universities: ["Stanford University", "University of Illinois"] },
+        { name: "Cybersecurity", universities: ["Carnegie Mellon University", "MIT"] },
+        { name: "Software Engineering", universities: ["Harvard University", "University of Michigan"] }
     ];
 
     function displayPrograms() {
