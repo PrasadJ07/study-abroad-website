@@ -1,10 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Website loaded successfully!");
 
-    // Event listeners for the navigation tabs
+    // Event listeners for navigation tabs
     document.getElementById('home-tab').addEventListener('click', () => showSection('home'));
     document.getElementById('programs-tab').addEventListener('click', () => showSection('programs'));
     document.getElementById('contact-tab').addEventListener('click', () => showSection('contact'));
+
+    // Event listener for program links
+    document.querySelectorAll('#program-list a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const program = e.target.getAttribute('data-program');
+            loadProgramDetails(program);
+        });
+    });
+
+    // Display programs on page load
+    displayPrograms();
 
     // Function to show the selected section and hide others
     function showSection(sectionId) {
@@ -25,8 +37,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Load program details dynamically
+    function loadProgramDetails(program) {
+        fetch(`${program}.html`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content-container').innerHTML = data;
+                showSection('content-container'); // Show the content container
+            })
+            .catch(error => console.error('Error loading program details:', error));
+    }
+
     // Display program list
-    displayPrograms();
+    function displayPrograms() {
+        const programSection = document.getElementById('program-list');
+        programSection.innerHTML = ''; // Clear existing content
+        programs.forEach(program => {
+            let programHTML = `<li><a href="#" data-program="${program.name.toLowerCase().replace(/\s+/g, '-')}" >${program.name}</a></li>`;
+            programSection.innerHTML += programHTML;
+        });
+    }
+
+    // Search functionality
+    window.performSearch = function() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const results = programs.flatMap(program =>
+            program.universities.filter(university => university.toLowerCase().includes(query))
+        );
+
+        alert(results.length > 0 ? `Search Results:\n${results.join('\n')}` : 'No results found.');
+    }
 });
 
 const programs = [
@@ -35,20 +75,3 @@ const programs = [
     { name: "Business Administration", universities: ["University E", "University F"] },
     { name: "Artificial Intelligence", universities: ["University G", "University H"] }
 ];
-
-function displayPrograms() {
-    const programSection = document.getElementById('program-list');
-    programs.forEach(program => {
-        let programHTML = `<li><a href="${program.name.toLowerCase().replace(/\s+/g, '-')}.html">${program.name}</a></li>`;
-        programSection.innerHTML += programHTML;
-    });
-}
-
-function performSearch() {
-    const query = document.getElementById('search-input').value.toLowerCase();
-    const results = programs.flatMap(program =>
-        program.universities.filter(university => university.toLowerCase().includes(query))
-    );
-    
-    alert(results.length > 0 ? `Search Results:\n${results.join('\n')}` : 'No results found.');
-}
