@@ -48,4 +48,31 @@ section {
     border-bottom: 1px solid #ddd;
     background-color: #e8f4f8; /* Light blue background for list items */
     border-radius: 4px; /* Rounded corners for list items */
-    margin-bottom: 10px; /* Spa
+    margin-bottom: 10px; /* Space between items */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+}
+
+#programs ul li:hover {
+    background-color: #d0e4f0; /* Slightly darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+#programs ul li h3 {
+    margin: 0;
+    color: #333;
+}
+
+#programs ul li p {
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
