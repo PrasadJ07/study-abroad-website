@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactSection = document.getElementById('contact');
     const searchBox = document.getElementById('search-box');
 
-    // Define program list
+    // Define program list and data
     const programList = document.getElementById('program-list');
     const programs = [
         { name: "Computer Science", universities: ["University A", "University B"] },
@@ -22,9 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function displayPrograms() {
         programList.innerHTML = ''; // Clear existing programs
         programs.forEach(program => {
-            const programHTML = `<li><h3>${program.name}</h3></li>`;
+            const programHTML = `<li><a href="#" onclick="showProgramDetails('${program.name}')">${program.name}</a></li>`;
             programList.innerHTML += programHTML;
         });
+    }
+
+    function showProgramDetails(programName) {
+        const program = programs.find(p => p.name === programName);
+        if (program) {
+            programList.innerHTML = ''; // Clear existing list
+            program.universities.forEach(university => {
+                const universityHTML = `<li>${university}</li>`;
+                programList.innerHTML += universityHTML;
+            });
+        }
     }
 
     function performSearch() {
