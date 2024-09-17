@@ -1,104 +1,26 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Header */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header .logo {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-}
-
-.nav-links li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.nav-links li a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    padding: 50px 20px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 2.5em;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-}
-
-.search-form {
-    margin-top: 20px;
-}
-
-.search-form input {
-    padding: 10px;
-    font-size: 1em;
-    width: 60%;
-    max-width: 400px;
-}
-
-.search-form button {
-    padding: 10px;
-    font-size: 1em;
-    background-color: #0066cc;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.search-form button:hover {
-    background-color: #004d99;
-}
-
-/* Featured Sections */
-.featured-section {
+/* Program Details Section */
+.program-details {
     padding: 20px;
     background-color: #fff;
     text-align: center;
 }
 
-.featured-section h2 {
+.program-details h1 {
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-.programs-grid, .universities-grid {
+.program-details p {
+    font-size: 1.2em;
+}
+
+.universities-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.program-card, .university-card {
+.university-card {
     background: #f4f4f4;
     margin: 10px;
     padding: 15px;
@@ -107,90 +29,6 @@ header .logo {
     text-align: center;
 }
 
-.program-card img, .university-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.program-card h3, .university-card h3 {
+.university-card h3 {
     margin: 15px 0;
-}
-
-.program-card a, .university-card a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.program-card a:hover, .university-card a:hover {
-    color: #004d99;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 30px;
-}
-
-footer .socials {
-    list-style-type: none;
-    padding: 0;
-}
-
-footer .socials li {
-    display: inline;
-    margin: 0 10px;
-}
-
-footer .socials li a {
-    color: #fff;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-footer .socials li a:hover {
-    color: #0066cc;
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    header .logo {
-        font-size: 1.8em;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.8em;
-    }
-    
-    .hero-content p {
-        font-size: 1em;
-    }
-    
-    .search-form input {
-        width: 80%;
-    }
-    
-    .search-form button {
-        width: 100%;
-    }
-    
-    .programs-grid, .universities-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .program-card, .university-card {
-        width: 90%;
-    }
-    
-    .nav-links li {
-        display: block;
-        margin: 5px 0;
-    }
 }
