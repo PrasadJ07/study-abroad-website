@@ -20,4 +20,5 @@
 
 #search-results ul ul {
     margin-left: 20px;
+    list-style: disc;
 }
