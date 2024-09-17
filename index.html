@@ -1,117 +1,56 @@
-/* style.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="programs.html">Programs</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Background Logo -->
+        <div class="background-logo"></div>
 
-/* Existing styles */
+        <h1>Welcome to the Study Abroad Website</h1>
+        <p>Explore various programs and find universities offering them.</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search programs and universities...">
+            <button id="search-button">Search</button>
+        </div>
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+        <!-- New Sections -->
+        <section id="get-in-touch">
+            <h2>Get in Touch</h2>
+            <p>Email us at: <a href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a></p>
+        </section>
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
+        <section id="contribute">
+            <h2>Contribute</h2>
+            <p><a href="write-review.html">Write a Review</a></p>
+        </section>
 
-nav {
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-}
-
-/* Background Logo */
-.background-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://via.placeholder.com/150') no-repeat center center; /* Placeholder logo URL */
-    background-size: contain; /* Adjust size */
-    z-index: -1; /* Ensure it stays in the background */
-    opacity: 0.3; /* Adjust opacity as needed */
-}
-
-/* Search Bar Styles */
-.search-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#search-bar {
-    width: 500px;
-    padding: 15px;
-    font-size: 18px;
-}
-
-#search-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-#search-button:hover {
-    background-color: #555;
-}
-
-/* New Sections */
-section {
-    margin: 40px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    margin-top: 0;
-}
-
-#follow-us ul {
-    list-style: none;
-    padding: 0;
-}
-
-#follow-us ul li {
-    margin: 5px 0;
-}
-
-#follow-us a {
-    color: #333;
-    text-decoration: none;
-}
-
-#follow-us a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+        <section id="follow-us">
+            <h2>Follow Us</h2>
+            <p>Stay connected through our social media channels:</p>
+            <ul>
+                <li><a href="https://facebook.com/yourprofile" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li>
+                <li><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
+                <!-- Add more social media links if needed -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
