@@ -1,42 +1,72 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Website loaded successfully!");
+// script.js
 
-    // Event listeners for navigation
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", (event) => {
-            const target = event.target.getAttribute("href").substring(1);
-            document.querySelector(`#${target}`).scrollIntoView({ behavior: "smooth" });
-        });
-    });
+// Sample data - replace with your actual data or fetch from an API
+const programsAndUniversities = {
+    "computer science": ["University A", "University B", "University C"],
+    "business administration": ["University D", "University E", "University F"],
+    "data analytics": ["University G", "University H", "University I"],
+    "artificial intelligence": ["University J", "University K", "University L"]
+};
 
-    // Search functionality
-    window.performSearch = function () {
-        const query = document.getElementById('search-input').value.toLowerCase();
-        let results = [];
-        
-        // Simple search through programs and universities
-        programs.forEach(program => {
-            const matches = program.universities.filter(university => university.toLowerCase().includes(query));
-            if (matches.length > 0) {
-                results.push({ program: program.name, universities: matches });
-            }
-        });
+function search(query) {
+    const results = [];
+    const lowerCaseQuery = query.toLowerCase();
 
-        // Display search results
-        const searchResults = document.getElementById('search-results');
-        if (results.length > 0) {
-            searchResults.innerHTML = results.map(result => 
-                `<h3>${result.program}</h3><ul>${result.universities.map(university => `<li><a href="#">${university}</a></li>`).join('')}</ul>`
-            ).join('');
+    for (const [program, universities] of Object.entries(programsAndUniversities)) {
+        if (program.includes(lowerCaseQuery)) {
+            results.push({
+                program,
+                universities
+            });
         } else {
-            searchResults.innerHTML = 'No results found.';
+            const matchedUniversities = universities.filter(university => university.toLowerCase().includes(lowerCaseQuery));
+            if (matchedUniversities.length > 0) {
+                results.push({
+                    program,
+                    universities: matchedUniversities
+                });
+            }
         }
-    };
-});
+    }
 
-const programs = [
-    { name: "Computer Science", universities: ["University A", "University B"] },
-    { name: "Data Analytics", universities: ["University C", "University D"] },
-    { name: "Business Administration", universities: ["University E", "University F"] },
-    { name: "Artificial Intelligence", universities: ["University G", "University H"] }
-];
+    return results;
+}
+
+document.getElementById('search-button').addEventListener('click', function() {
+    const query = document.getElementById('search-bar').value;
+
+    if (query.trim() === '') {
+        alert('Please enter a search query.');
+        return;
+    }
+
+    const results = search(query);
+
+    // Clear previous results
+    let resultsContainer = document.getElementById('search-results');
+    if (!resultsContainer) {
+        resultsContainer = document.createElement('div');
+        resultsContainer.id = 'search-results';
+        document.querySelector('main').appendChild(resultsContainer);
+    } else {
+        resultsContainer.innerHTML = '';
+    }
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+    } else {
+        results.forEach(result => {
+            const programHeader = document.createElement('h2');
+            programHeader.textContent = result.program.charAt(0).toUpperCase() + result.program.slice(1);
+            resultsContainer.appendChild(programHeader);
+
+            const universityList = document.createElement('ul');
+            result.universities.forEach(university => {
+                const listItem = document.createElement('li');
+                listItem.textContent = university;
+                universityList.appendChild(listItem);
+            });
+            resultsContainer.appendChild(universityList);
+        });
+    }
+});
