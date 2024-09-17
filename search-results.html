@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search results for study abroad programs and universities.">
+    <meta name="keywords" content="study abroad, search results, programs, universities">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="programs.html">Programs</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Search Results</h1>
+        <div id="search-results"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Study Abroad</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+
+            if (query) {
+                document.getElementById('search-results').innerHTML = `
+                    <h2>Results for "${query}"</h2>
+                    <p>Here you can display the search results based on the query.</p>
+                    <!-- Add your search results logic here -->
+                `;
+            } else {
+                document.getElementById('search-results').innerHTML = '<p>No search query provided.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
