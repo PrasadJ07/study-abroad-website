@@ -16,75 +16,55 @@ header {
 }
 
 header .logo {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
-nav ul {
+.nav-links {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
 
-nav ul li {
+.nav-links li {
+    display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     text-decoration: underline;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* Hero Section */
 .hero {
-    background: url('hero-background.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    background-color: #333;
     color: #fff;
-    padding: 60px 20px;
     text-align: center;
 }
 
-.hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.hero h1 {
+.hero-content h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2em;
-    margin-bottom: 20px;
 }
 
 .search-form {
-    display: flex;
-    justify-content: center;
+    margin-top: 20px;
 }
 
 .search-form input {
     padding: 10px;
     font-size: 1em;
-    width: 300px;
+    width: 60%;
+    max-width: 400px;
 }
 
 .search-form button {
@@ -100,7 +80,7 @@ nav ul li a:hover {
     background-color: #004d99;
 }
 
-/* Programs Section */
+/* Featured Sections */
 .featured-section {
     padding: 20px;
     background-color: #fff;
@@ -112,42 +92,13 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.programs-grid {
+.programs-grid, .universities-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.program-card {
-    background: #f4f4f4;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-}
-
-.program-card h3 {
-    margin: 15px 0;
-}
-
-.program-card a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.program-card a:hover {
-    color: #004d99;
-}
-
-/* Universities Section */
-.universities-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.university-card {
+.program-card, .university-card {
     background: #f4f4f4;
     margin: 10px;
     padding: 15px;
@@ -156,14 +107,23 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.university-card img {
+.program-card img, .university-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-.university-card h3 {
+.program-card h3, .university-card h3 {
     margin: 15px 0;
+}
+
+.program-card a, .university-card a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.program-card a:hover, .university-card a:hover {
+    color: #004d99;
 }
 
 /* Footer */
@@ -172,27 +132,29 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     margin-top: 30px;
 }
 
 footer .socials {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
 
 footer .socials li {
+    display: inline;
     margin: 0 10px;
 }
 
-footer .socials a {
+footer .socials li a {
     color: #fff;
     font-size: 1.5em;
     text-decoration: none;
 }
 
-footer .socials a:hover {
+footer .socials li a:hover {
     color: #0066cc;
 }
 
@@ -202,19 +164,33 @@ footer .socials a:hover {
         font-size: 1.8em;
     }
     
-    .hero h1 {
+    .hero-content h1 {
         font-size: 1.8em;
     }
     
-    .hero p {
+    .hero-content p {
         font-size: 1em;
     }
     
     .search-form input {
-        width: 200px;
+        width: 80%;
+    }
+    
+    .search-form button {
+        width: 100%;
+    }
+    
+    .programs-grid, .universities-grid {
+        flex-direction: column;
+        align-items: center;
     }
     
     .program-card, .university-card {
         width: 90%;
+    }
+    
+    .nav-links li {
+        display: block;
+        margin: 5px 0;
     }
 }
