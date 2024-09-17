@@ -28,45 +28,65 @@
             const params = new URLSearchParams(window.location.search);
             const query = params.get('q').toLowerCase();
             const data = {
-                programs: [
-                    "Computer Science",
-                    "Business Administration",
-                    "Data Analytics",
-                    "Artificial Intelligence"
-                ],
                 universities: [
-                    "Harvard University",
-                    "Stanford University",
-                    "MIT",
-                    "University of California, Berkeley",
-                    "University of Cambridge"
+                    {
+                        name: "Harvard University",
+                        programs: [
+                            "Computer Science",
+                            "Data Analytics"
+                        ]
+                    },
+                    {
+                        name: "Stanford University",
+                        programs: [
+                            "Computer Science",
+                            "Artificial Intelligence"
+                        ]
+                    },
+                    {
+                        name: "MIT",
+                        programs: [
+                            "Computer Science",
+                            "Data Analytics",
+                            "Business Administration"
+                        ]
+                    },
+                    {
+                        name: "University of California, Berkeley",
+                        programs: [
+                            "Computer Science",
+                            "Business Administration"
+                        ]
+                    },
+                    {
+                        name: "University of Cambridge",
+                        programs: [
+                            "Artificial Intelligence",
+                            "Business Administration"
+                        ]
+                    }
                 ]
             };
 
-            const results = {
-                programs: data.programs.filter(program => program.toLowerCase().includes(query)),
-                universities: data.universities.filter(university => university.toLowerCase().includes(query))
-            };
+            const results = data.universities.filter(university => {
+                return university.name.toLowerCase().includes(query) ||
+                       university.programs.some(program => program.toLowerCase().includes(query));
+            });
 
             let resultsHTML = `<h2>Results for "${query}"</h2>`;
 
-            if (results.programs.length > 0) {
-                resultsHTML += `<h3>Programs</h3><ul>`;
-                results.programs.forEach(program => {
-                    resultsHTML += `<li>${program}</li>`;
+            if (results.length > 0) {
+                resultsHTML += `<ul>`;
+                results.forEach(university => {
+                    resultsHTML += `<li><strong>${university.name}</strong>`;
+                    resultsHTML += `<ul>`;
+                    university.programs.forEach(program => {
+                        resultsHTML += `<li>${program}</li>`;
+                    });
+                    resultsHTML += `</ul></li>`;
                 });
                 resultsHTML += `</ul>`;
-            }
-
-            if (results.universities.length > 0) {
-                resultsHTML += `<h3>Universities</h3><ul>`;
-                results.universities.forEach(university => {
-                    resultsHTML += `<li>${university}</li>`;
-                });
-                resultsHTML += `</ul>`;
-            }
-
-            if (results.programs.length === 0 && results.universities.length === 0) {
+            } else {
                 resultsHTML += '<p>No results found.</p>';
             }
 
