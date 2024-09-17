@@ -44,11 +44,17 @@ const data = {
 document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.getElementById('search-button');
     const searchBar = document.getElementById('search-bar');
+    const searchResults = document.getElementById('search-results');
 
     searchButton.addEventListener('click', () => {
         const query = searchBar.value.trim().toLowerCase();
         if (query) {
-            window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
+            const results = data.universities.filter(uni =>
+                uni.name.toLowerCase().includes(query) || 
+                uni.programs.some(program => program.toLowerCase().includes(query))
+            );
+
+            displayResults(results);
         }
     });
 
@@ -58,4 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
             searchButton.click();
         }
     });
+
+    function displayResults(results) {
+        searchResults.innerHTML = '';
+        if (results.length > 0) {
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <h3>${result.name}</h3>
+                    <p><strong>Programs Offered:</strong> ${result.programs.join(', ')}</p>
+                `;
+                searchResults.appendChild(resultItem);
+            });
+        } else {
+            searchResults.innerHTML = '<p>No results found.</p>';
+        }
+    }
 });
