@@ -41,18 +41,19 @@ main {
 }
 
 #search-bar {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
+    width: 500px; /* Increase width */
+    padding: 15px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
 }
 
 #search-button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 30px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
+    margin-left: 10px; /* Space between input and button */
 }
 
 #search-button:hover {
