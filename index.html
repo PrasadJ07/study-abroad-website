@@ -1,108 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Abroad Website</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Programs</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Top Navigation Bar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">StudyAbroad</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        
-        <!-- Programs button with dropdown -->
-        <li class="dropdown">
-          <a href="#programs" class="dropbtn">Programs</a>
-          <div class="dropdown-content">
-            <a href="universities/computer-science.html">Computer Science</a>
-            <a href="universities/business-management.html">Business Management</a>
-            <a href="universities/data-analytics.html">Data Analytics</a>
-            <a href="universities/artificial-intelligence.html">Artificial Intelligence</a>
-          </div>
-        </li>
+    <header>
+        <h1>Computer Science Programs</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#programs">Programs</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <li><a href="#universities">Universities</a></li>
-        <li><a href="#countries">Countries</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section>
+        <h2>Universities Offering Computer Science</h2>
+        <ul>
+            <li>University A</li>
+            <li>University B</li>
+            <li>University C</li>
+        </ul>
+    </section>
 
-  <!-- Hero Section with Search Bar -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Find the Best Study Abroad Programs</h1>
-      <p>Your dream education is just a click away!</p>
-      <form class="search-form">
-        <input type="text" id="search-input" placeholder="Search for programs, universities, countries">
-        <button type="button" onclick="performSearch()">Search</button>
-      </form>
-      <div id="search-results" class="search-results"></div>
-    </div>
-  </section>
-
-  <!-- Featured Programs Section -->
-  <section id="programs" class="featured-section">
-    <h2>Explore Popular Programs</h2>
-    <div class="programs-grid">
-      <!-- Program 1: Computer Science -->
-      <div id="program1" class="program-card">
-        <img src="program1.jpg" alt="Program 1">
-        <h3>Computer Science</h3>
-        <p>Top universities offering Computer Science.</p>
-        <a href="universities/computer-science.html">Learn More</a>
-      </div>
-
-      <!-- Program 2: Business Management -->
-      <div id="program2" class="program-card">
-        <img src="program2.jpg" alt="Program 2">
-        <h3>Business Management</h3>
-        <p>Explore the best business schools.</p>
-        <a href="universities/business-management.html">Learn More</a>
-      </div>
-
-      <!-- Add more program cards -->
-    </div>
-  </section>
-
-  <!-- Featured Universities Section -->
-  <section id="universities" class="featured-section">
-    <h2>Top Universities</h2>
-    <div class="universities-grid">
-      <div class="university-card">
-        <img src="uni1.jpg" alt="University 1">
-        <h3>Harvard University</h3>
-        <p>Ranked #1 globally for Business Studies.</p>
-        <a href="#">Learn More</a>
-      </div>
-      <div class="university-card">
-        <img src="uni2.jpg" alt="University 2">
-        <h3>Stanford University</h3>
-        <p>Excellence in Computer Science and Technology.</p>
-        <a href="#">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <h3>Study Abroad</h3>
-      <p>Your one-stop platform for exploring study-abroad options.</p>
-      <ul class="socials">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Study Abroad. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2024 Study Abroad. All rights reserved.</p>
+    </footer>
 </body>
 </html>
