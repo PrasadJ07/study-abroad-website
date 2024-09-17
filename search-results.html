@@ -7,7 +7,6 @@
     <meta name="keywords" content="study abroad, search results, programs, universities">
     <title>Search Results</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,71 +25,17 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const query = params.get('q').toLowerCase();
-            const data = {
-                universities: [
-                    {
-                        name: "Harvard University",
-                        programs: [
-                            "Computer Science",
-                            "Data Analytics"
-                        ]
-                    },
-                    {
-                        name: "Stanford University",
-                        programs: [
-                            "Computer Science",
-                            "Artificial Intelligence"
-                        ]
-                    },
-                    {
-                        name: "MIT",
-                        programs: [
-                            "Computer Science",
-                            "Data Analytics",
-                            "Business Administration"
-                        ]
-                    },
-                    {
-                        name: "University of California, Berkeley",
-                        programs: [
-                            "Computer Science",
-                            "Business Administration"
-                        ]
-                    },
-                    {
-                        name: "University of Cambridge",
-                        programs: [
-                            "Artificial Intelligence",
-                            "Business Administration"
-                        ]
-                    }
-                ]
-            };
+            const query = params.get('q');
 
-            const results = data.universities.filter(university => {
-                return university.name.toLowerCase().includes(query) ||
-                       university.programs.some(program => program.toLowerCase().includes(query));
-            });
-
-            let resultsHTML = `<h2>Results for "${query}"</h2>`;
-
-            if (results.length > 0) {
-                resultsHTML += `<ul>`;
-                results.forEach(university => {
-                    resultsHTML += `<li><strong>${university.name}</strong>`;
-                    resultsHTML += `<ul>`;
-                    university.programs.forEach(program => {
-                        resultsHTML += `<li>${program}</li>`;
-                    });
-                    resultsHTML += `</ul></li>`;
-                });
-                resultsHTML += `</ul>`;
+            if (query) {
+                document.getElementById('search-results').innerHTML = `
+                    <h2>Results for "${query}"</h2>
+                    <p>Here you can display the search results based on the query.</p>
+                    <!-- Add your search results logic here -->
+                `;
             } else {
-                resultsHTML += '<p>No results found.</p>';
+                document.getElementById('search-results').innerHTML = '<p>No search query provided.</p>';
             }
-
-            document.getElementById('search-results').innerHTML = resultsHTML;
         });
     </script>
 </body>
