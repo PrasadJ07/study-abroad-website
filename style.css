@@ -15,5 +15,9 @@
 }
 
 #search-results ul li {
-    margin: 5px 0;
+    margin: 10px 0;
+}
+
+#search-results ul ul {
+    margin-left: 20px;
 }
