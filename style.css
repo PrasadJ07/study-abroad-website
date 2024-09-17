@@ -211,4 +211,10 @@ footer .socials a:hover {
     }
     
     .search-form input {
-        width: 
+        width: 200px;
+    }
+    
+    .program-card, .university-card {
+        width: 90%;
+    }
+}
