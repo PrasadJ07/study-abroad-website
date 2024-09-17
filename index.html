@@ -8,43 +8,28 @@
     <meta name="author" content="Your Name">
     <title>Study Abroad | Explore Programs and Universities</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Study Abroad",
-        "url": "https://prasadj07.github.io/study-abroad-website/",
-        "logo": "https://via.placeholder.com/150?text=Your+Logo",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-800-555-5555",
-            "contactType": "Customer Service"
-        }
-    }
-    </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo">Study Abroad</a>
             <a href="index.html">Home</a>
             <a href="programs.html">Programs</a>
         </nav>
     </header>
     <main>
-        <!-- Background Logo -->
-        <div class="background-logo"></div>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the Study Abroad Website</h1>
+                <p>Explore various programs and find universities offering them.</p>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search programs and universities...">
+                    <button id="search-button">Search</button>
+                </div>
+            </div>
+        </section>
 
-        <h1>Welcome to the Study Abroad Website</h1>
-        <p>Explore various programs and find universities offering them.</p>
-        
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Search programs and universities...">
-            <button id="search-button">Search</button>
-        </div>
-
-        <!-- New Sections -->
         <section id="get-in-touch">
             <h2>Get in Touch</h2>
             <p>Email us at: <a href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a></p>
@@ -68,6 +53,5 @@
     <footer>
         <p>&copy; 2024 Study Abroad</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
