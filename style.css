@@ -1,23 +1,115 @@
-/* Add or update the following styles in style.css */
+/* style.css */
 
-/* Style for search results */
-#search-results {
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-#search-results h2 {
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+/* Background Logo */
+.background-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x1080.png?text=Your+Logo') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Search Bar Styles */
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#search-bar {
+    width: 500px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+#search-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+/* New Sections */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
     margin-top: 0;
 }
 
-#search-results ul {
+#follow-us ul {
     list-style: none;
     padding: 0;
 }
 
-#search-results ul li {
-    margin: 10px 0;
+#follow-us ul li {
+    margin: 5px 0;
 }
 
-#search-results ul ul {
-    margin-left: 20px;
+#follow-us a {
+    color: #333;
+    text-decoration: none;
+}
+
+#follow-us a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
