@@ -7,6 +7,7 @@
     <meta name="keywords" content="study abroad, search results, programs, universities">
     <title>Search Results</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,17 +26,51 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const query = params.get('q');
+            const query = params.get('q').toLowerCase();
+            const data = {
+                programs: [
+                    "Computer Science",
+                    "Business Administration",
+                    "Data Analytics",
+                    "Artificial Intelligence"
+                ],
+                universities: [
+                    "Harvard University",
+                    "Stanford University",
+                    "MIT",
+                    "University of California, Berkeley",
+                    "University of Cambridge"
+                ]
+            };
 
-            if (query) {
-                document.getElementById('search-results').innerHTML = `
-                    <h2>Results for "${query}"</h2>
-                    <p>Here you can display the search results based on the query.</p>
-                    <!-- Add your search results logic here -->
-                `;
-            } else {
-                document.getElementById('search-results').innerHTML = '<p>No search query provided.</p>';
+            const results = {
+                programs: data.programs.filter(program => program.toLowerCase().includes(query)),
+                universities: data.universities.filter(university => university.toLowerCase().includes(query))
+            };
+
+            let resultsHTML = `<h2>Results for "${query}"</h2>`;
+
+            if (results.programs.length > 0) {
+                resultsHTML += `<h3>Programs</h3><ul>`;
+                results.programs.forEach(program => {
+                    resultsHTML += `<li>${program}</li>`;
+                });
+                resultsHTML += `</ul>`;
             }
+
+            if (results.universities.length > 0) {
+                resultsHTML += `<h3>Universities</h3><ul>`;
+                results.universities.forEach(university => {
+                    resultsHTML += `<li>${university}</li>`;
+                });
+                resultsHTML += `</ul>`;
+            }
+
+            if (results.programs.length === 0 && results.universities.length === 0) {
+                resultsHTML += '<p>No results found.</p>';
+            }
+
+            document.getElementById('search-results').innerHTML = resultsHTML;
         });
     </script>
 </body>
