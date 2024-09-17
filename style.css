@@ -15,52 +15,115 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+header .logo {
     font-size: 2.5em;
     font-weight: bold;
 }
 
-nav ul {
+.nav-links {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
+.nav-links li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     text-decoration: underline;
 }
 
-/* Section */
-section {
+/* Hero Section */
+.hero {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.search-form {
+    margin-top: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 1em;
+    width: 60%;
+    max-width: 400px;
+}
+
+.search-form button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #004d99;
+}
+
+/* Featured Sections */
+.featured-section {
     padding: 20px;
     background-color: #fff;
     text-align: center;
 }
 
-section h2 {
+.featured-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-section ul {
-    list-style-type: none;
-    padding: 0;
+.programs-grid, .universities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-section ul li {
-    font-size: 1.2em;
-    margin: 10px 0;
+.program-card, .university-card {
+    background: #f4f4f4;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.program-card img, .university-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.program-card h3, .university-card h3 {
+    margin: 15px 0;
+}
+
+.program-card a, .university-card a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.program-card a:hover, .university-card a:hover {
+    color: #004d99;
 }
 
 /* Footer */
@@ -69,39 +132,3 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 30px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Additional Styling */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #004d99;
-    text-decoration: underline;
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-    
-    section h2 {
-        font-size: 1.5em;
-    }
-    
-    nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-}
