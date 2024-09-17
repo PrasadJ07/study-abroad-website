@@ -1,19 +1,146 @@
-/* Program Details Section */
-.program-details {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 1em;
+    width: 300px;
+}
+
+.search-form button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #004d99;
+}
+
+/* Programs Section */
+.featured-section {
     padding: 20px;
     background-color: #fff;
     text-align: center;
 }
 
-.program-details h1 {
+.featured-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-.program-details p {
-    font-size: 1.2em;
+.programs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+.program-card {
+    background: #f4f4f4;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.program-card h3 {
+    margin: 15px 0;
+}
+
+.program-card a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.program-card a:hover {
+    color: #004d99;
+}
+
+/* Universities Section */
 .universities-grid {
     display: flex;
     flex-wrap: wrap;
@@ -29,6 +156,59 @@
     text-align: center;
 }
 
+.university-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .university-card h3 {
     margin: 15px 0;
 }
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+footer .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer .socials li {
+    margin: 0 10px;
+}
+
+footer .socials a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+footer .socials a:hover {
+    color: #0066cc;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    header .logo {
+        font-size: 1.8em;
+    }
+    
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+    
+    .search-form input {
+        width: 
